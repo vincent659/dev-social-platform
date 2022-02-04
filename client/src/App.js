@@ -7,6 +7,8 @@ import Login from './components/auth/Login';
 import Alert from './components/layout/Alert';
 import Dashboard from './components/dashboard/Dashboard';
 import ProfileForm from './components/profile-forms/ProfileForm';
+import AddExperience from './components/profile-forms/AddExperience';
+import AddEducation from './components/profile-forms/AddEducation';
 import PrivateRoute from './components/routing/PrivateRoute';
 // Redux is seperate from React, hence we need to import in the 'Provider', hence all the components can access the 'state' from the store
 import { Provider } from 'react-redux';
@@ -46,6 +48,14 @@ const App = () => {
           <Route
             path='edit-profile'
             element={<PrivateRoute component={ProfileForm} />}
+          />
+          <Route
+            path='add-experience'
+            element={<PrivateRoute component={AddExperience} />}
+          />
+          <Route
+            path='add-education'
+            element={<PrivateRoute component={AddEducation} />}
           />
         </Routes>
       </Router>
