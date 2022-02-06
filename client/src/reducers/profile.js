@@ -5,7 +5,7 @@ import {
   UPDATE_PROFILE,
 } from '../actions/types';
 
-const inittialState = {
+const initialState = {
   profile: null,
   profiles: [],
   repos: [],
@@ -13,7 +13,7 @@ const inittialState = {
   error: {},
 };
 
-function profileReducer(state = inittialState, action) {
+function profileReducer(state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {
@@ -29,6 +29,7 @@ function profileReducer(state = inittialState, action) {
         ...state,
         error: payload,
         loading: false,
+        profile: null,
       };
     case CLEAR_PROFILE:
       return {
