@@ -17,13 +17,13 @@ const Dashboard = ({
 }) => {
   useEffect(() => {
     getCurrentProfile();
-  }, []);
+  }, [getCurrentProfile]);
 
   return loading && profile === null ? (
     <Spinner />
   ) : (
     <Fragment>
-      <h1 className='large text-primary'>Dashboardd</h1>
+      <h1 className='large text-primary'>Dashboard</h1>
       <p className='lead'>
         {/* Below {user && user.name} is saying if user exists show the user.name*/}
         <i className='fas fa-user'></i> Welcome {user && user.name}
