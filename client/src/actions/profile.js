@@ -220,6 +220,11 @@ export const deleteAccount = () => async (dispatch) => {
       // don't need payload to delete
       dispatch({ type: CLEAR_PROFILE });
       dispatch({ type: ACCOUNT_DELETED });
-    } catch (err) {}
+    } catch (err) {
+      dispatch({
+        type: PROFILE_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status },
+      });
+    }
   }
 };

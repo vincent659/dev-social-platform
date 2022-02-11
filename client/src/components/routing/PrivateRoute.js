@@ -12,15 +12,6 @@ const PrivateRoute = ({
   if (isAuthenticated) return <Component />;
 
   return <Navigate to='/login' />;
-  //   <Navigate
-  //     render={(props) =>
-  //       !isAuthenticated && !loading ? (
-  //         <Navigate to='/login' />
-  //       ) : (
-  //         <Component {...props} />
-  //       )
-  //     }
-  //   />;
 };
 
 PrivateRoute.propTypes = {
