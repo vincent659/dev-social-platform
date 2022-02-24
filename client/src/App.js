@@ -25,19 +25,16 @@ import setAuthToken from './utils/setAuthToken';
 
 import './App.css';
 
-// if (localStorage.token) {
-//   setAuthToken(localStorage.token);
-// }
-
 const App = () => {
   useEffect(() => {
+    console.log('vc');
     // check for token in LS when app first runs
+    // This is so we know if we need to display auth content to user or non-auth
     if (localStorage.token) {
       // if there is a token set axios headers for all requests
       setAuthToken(localStorage.token);
     }
-    // try to fetch a user, if no token or invalid token we
-    // will get a 401 response from our API
+    // try to fetch a user, if no token or invalid token we will get a 401 response from our API
     store.dispatch(loadUser());
 
     // log user out from all tabs if they log out in one tab
